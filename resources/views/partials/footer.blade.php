@@ -1,5 +1,5 @@
 <?php
-
+$menuFontAweFooter = config('menues.menuFontAweFooter')
 
 ?>
 <footer>
@@ -16,9 +16,12 @@
 
                 <div class="social">
                     <h5>Trovaci anche su</h5>
-                    <a v-for="(item, index) in menuFontAweFooter" :key="index" :href="item.href">
-                    <i :class="item.font"></i>
+                    @foreach ($menuFontAweFooter as $item)
+                    <a href="{{$item['href']}}">
+                    <i class="{{$item['font']}}"></i>
                     </a>
+
+                    @endforeach
                 </div>
 
         </div>
